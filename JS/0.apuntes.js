@@ -449,7 +449,7 @@ nested objects, object destructuring, and default parameters son conceptos relac
   const obj = { name: "John", age: 30 };
   Object.freeze(obj);
   obj.age = 31; // No tendrá efecto, ya que el objeto está congelado
-  console.log(obj.age); // 30, el valor no ha cambiado
+  console.log(obj.age); // 30, el valor no ha cambiado.
 
 */
 function RecursionChallenge(num) { 
