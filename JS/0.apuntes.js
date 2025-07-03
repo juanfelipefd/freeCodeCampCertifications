@@ -123,6 +123,16 @@
     const str = "hello";
     const arr = Array.from(str);
     console.log(arr); // ["h", "e", "l", "l", "o"]
+  .split(): divide una cadena en un array de subcadenas, utilizando un separador especificado.
+    eg:
+    const text = "apple, banana, orange";
+    const fruits = text.split(", ");
+    console.log(fruits); // ["apple", "banana", "orange"]
+    si el argumento se deja vacío, retorna un array que contiene el string.
+    eg:
+    const text = "hello";
+    const chars = text.split();
+    console.log(chars); // ["hello"];
 
   Métodos de array:
   .push(): agrega un elemento al final del array. En caso de devolver un valor, devuelve la nueva longitud del array.
@@ -164,7 +174,7 @@
     const numbers = [1, 2, 3];
     const doubled = numbers.map(num => num * 2);
     console.log(doubled); // [2, 4, 6]
-  .join(): une todos los elementos de un array en una cadena de texto, separándolos por un separador especificado.
+  .join(): une todos los elementos de un array en una cadena de texto, separándolos por un separador especificado. Devuelve una cadena.
     eg:
     const fruits = ["apple", "banana", "orange"];
     const fruitString = fruits.join(", ");
@@ -194,6 +204,11 @@
     const numbers = [1, 2, 3, 4, 5];
     const evenNumbers = numbers.filter(num => num % 2 === 0);
     console.log(evenNumbers); // [2, 4]
+  .reverse(): invierte el orden de los elementos en un array.
+    eg:
+    const numbers = [1, 2, 3, 4];
+    numbers.reverse();
+    console.log(numbers); // [4, 3, 2, 1]
 */
 
 /* CONDICIONALES */
@@ -205,6 +220,19 @@
     logic;
   } else {
     logic;
+  }
+  
+  Switch statement:
+  Se usa para evaluar una expresión y ejecutar diferentes bloques de código según el valor de esa expresión
+  switch (expression) {
+    case value1:
+      // código a ejecutar si expression es igual a value1
+      break;
+    case value2:
+      // código a ejecutar si expression es igual a value2
+      break;
+    default:
+      // código a ejecutar si expression no coincide con ningún case
   }
 */
 
@@ -249,7 +277,14 @@
     eg:
       const square = x => x * x; // función flecha que calcula el cuadrado de un número
       console.log(square(5)); // 25
-*/
+  Las funciones pueden recibir parámetros por defecto, que son valores que se pasan a la función cuando se llama.
+      const greeting = (name = "Anonymous") => {
+      return "Hello " + name;
+    } 
+
+    console.log(greeting("John")); // Hello John
+    console.log(greeting()); // Hello Anonymous
+    */
 
 /* Escape secuence */
 /* escape secuence: 
@@ -361,6 +396,16 @@ La forma como JavaScript interactúa con el HTML y CSS de una página web. Usan 
   const audio = new Audio();
 */
 
+/* Date() constructor */
+/* 
+const currentDate = new Date(); //se crea un objeto Date
+const day = date.getDate();// obtiene el día del mes (1-31)
+const month = date.getMonth() + 1; // obtiene el mes (0-11, por lo que se suma 1 para obtener el mes correcto)
+const year = date.getFullYear(); // obtiene el año completo (4 dígitos)
+const hours = date.getHours(); // obtiene la hora (0-23)
+const minutes = date.getMinutes(); // obtiene los minutos (0-59)
+*/
+
 /* Operador spread (...) */
 /* 
  Permite copiar todos los elementos de un array a otro y también para concatenar arrays.
@@ -381,6 +426,32 @@ La forma como JavaScript interactúa con el HTML y CSS de una página web. Usan 
   console.log(user?.address?.city); // undefined, no lanza error si address o city no existen
 */
 
+/* 
+nested objects, object destructuring, and default parameters son conceptos relacionados con la manipulación de objetos en JavaScript.
+  nested objects: son objetos que contienen otros objetos como propiedades. Permiten organizar datos de manera estructurada y jerárquica.
+  object destructuring: es una sintaxis que permite extraer propiedades de un objeto y asignarlas a variables individuales de manera más concisa.
+   eg:
+    const developerObj = {
+      name: "Jessica Wilkins",
+      isDeveloper: true
+    };
+
+    // Object destructuring
+    const { name, isDeveloper } = developerObj;
+  default parameters: son valores predeterminados que se asignan a los parámetros de una función si no se proporcionan argumentos al llamar a la función.
+  Estos conceptos son útiles para trabajar con datos complejos y mejorar la legibilidad del código.
+*/
+
+/* Object methods */
+/* 
+  .freeze(): es un método que se utiliza para evitar que un objeto sea modificado. Una vez que se aplica, no se pueden agregar, eliminar o modificar propiedades del objeto.
+  eg:
+  const obj = { name: "John", age: 30 };
+  Object.freeze(obj);
+  obj.age = 31; // No tendrá efecto, ya que el objeto está congelado
+  console.log(obj.age); // 30, el valor no ha cambiado
+
+*/
 function RecursionChallenge(num) { 
   let resultado = 1;
   const token = "oj8nbz3d0c";
