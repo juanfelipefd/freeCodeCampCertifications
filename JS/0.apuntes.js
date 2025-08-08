@@ -40,6 +40,7 @@
     eg:
     const button = document.querySelector("button");
     button.addEventListener("click", myFunction); //IMPORTANTE: se pasa el nombre de la función, sin paréntesis.
+    console.log(e.target.value); // e.target es el elemento que disparó el evento, en este caso el botón.
   .innerText: propiedad que permite obtener o establecer el contenido de texto de un elemento HTML.
     eg:
     const element = document.querySelector(".my-element");
@@ -71,6 +72,10 @@
     eg:
     const element = document.querySelector(".my-element");
     element.classList.add("my-class"); //agrega la clase "my-class" al elemento
+  .classList.toggle(): método que alterna una clase en un elemento HTML. Si la clase ya existe, la elimina; si no existe, la agrega.
+    eg:
+    const element = document.querySelector(".my-element");
+    element.classList.toggle("my-class"); //si "my-class" existe, la elimina; si no existe, la agrega
   .textContent: propiedad que permite obtener o establecer el contenido de texto de un elemento HTML, similar a innerText pero sin interpretar HTML.
     eg:
     <div id="example">This is some text content</div>
@@ -86,6 +91,12 @@
     eg:
     const element = document.querySelector(".my-element");
     element.remove(); //elimina el elemento del DOM
+  .showModal(): método que muestra un diálogo modal en el navegador.
+    eg:
+      dialogElement.showModal()
+  .close(): método que cierra un diálogo modal.
+    eg:
+      dialogElement.close();
 */
 
 /* MÉTODOS */
@@ -209,6 +220,16 @@
     const numbers = [1, 2, 3, 4];
     numbers.reverse();
     console.log(numbers); // [4, 3, 2, 1]
+  .findIndex(): devuelve el índice del primer elemento en un array que cumple con una condición especificada en una función de callback. Si ningún elemento cumple con la condición, devuelve -1.
+    eg:
+    const numbers = [3, 1, 5, 6];
+    const firstNumLargerThanThree = numbers.findIndex((num) => num > 3);
+    console.log(firstNumLargerThanThree); // prints index 2
+  .splice(): devuelve una copia superficial de una porción del array dentro de un nuevo array, el primero es el index, el segundo la cantidad de items, el tercero (opcional) es el elemento a agregar.
+    eg:
+    const fruits = ["apple", "banana", "orange", "kiwi"];
+    const slicedFruits = fruits.slice(1, 2);
+    console.log(slicedFruits); // ["banana", "orange"]
 */
 
 /* CONDICIONALES */
@@ -404,6 +425,7 @@ const month = date.getMonth() + 1; // obtiene el mes (0-11, por lo que se suma 1
 const year = date.getFullYear(); // obtiene el año completo (4 dígitos)
 const hours = date.getHours(); // obtiene la hora (0-23)
 const minutes = date.getMinutes(); // obtiene los minutos (0-59)
+const now = date.now(); // obtiene la marca de tiempo actual en milisegundos desde el 1 de enero de 1970
 */
 
 /* Operador spread (...) */
@@ -440,6 +462,13 @@ nested objects, object destructuring, and default parameters son conceptos relac
     const { name, isDeveloper } = developerObj;
   default parameters: son valores predeterminados que se asignan a los parámetros de una función si no se proporcionan argumentos al llamar a la función.
   Estos conceptos son útiles para trabajar con datos complejos y mejorar la legibilidad del código.
+    eg:
+    const greeting = (name = "Anonymous") => {
+      return "Hello " + name;
+    } 
+
+    console.log(greeting("John")); // Hello John
+    console.log(greeting()); // Hello Anonymous
 */
 
 /* Object methods */
