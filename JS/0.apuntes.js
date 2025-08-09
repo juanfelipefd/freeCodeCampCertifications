@@ -97,6 +97,20 @@
   .close(): método que cierra un diálogo modal.
     eg:
       dialogElement.close();
+  .preventDefault(): método que previene la acción por defecto de un evento.
+    eg:
+    const form = document.querySelector("form");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      // Lógica para manejar el envío del formulario
+    });
+  !titleInput.value.trim(): expresión de validación que devuelve true si el campo está vacío o solo contiene espacios en blanco.
+    Se usa comúnmente para validar formularios antes de procesarlos.
+    eg:
+    if (!titleInput.value.trim()) {
+      alert("Por favor, ingresa un título");
+      return;
+    }
 */
 
 /* MÉTODOS */
@@ -480,6 +494,16 @@ nested objects, object destructuring, and default parameters son conceptos relac
   obj.age = 31; // No tendrá efecto, ya que el objeto está congelado
   console.log(obj.age); // 30, el valor no ha cambiado.
 
+*/
+
+/* Local storage */
+/* 
+  Este objeto permite almacenar, obtener y eliminar datos en el navegador del usuario de forma persistente. 
+  Todo lo que se almacena en el local storage es en formato de cadena de texto (string). Se usa JSON.stringify() para convertir objetos a cadenas y JSON.parse() para convertir cadenas en objetos.
+  .setItem(key, value): almacena un valor asociado a una clave en el almacenamiento local.
+  .getItem(key): obtiene el valor asociado a una clave en el almacenamiento local.
+  .removeItem(key): elimina el valor asociado a una clave en el almacenamiento local.
+  .clear(): elimina todos los elementos del almacenamiento local.
 */
 function RecursionChallenge(num) { 
   let resultado = 1;
